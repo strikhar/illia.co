@@ -146,12 +146,17 @@
 
   /* ---------- reveal on scroll ---------- */
   function reveal() {
-    const els = document.querySelectorAll(".reveal");
+    const els = [...document.querySelectorAll(".reveal")];
     if (!("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("is-in")); return; }
+    // Anything already in the first viewport is revealed immediately — the observer only handles what scrolls in later.
+    const vh = window.innerHeight;
+    els.forEach((e) => { const r = e.getBoundingClientRect(); if (r.top < vh && r.bottom > 0) e.classList.add("is-in"); });
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    els.forEach((e) => io.observe(e));
+    els.forEach((e) => { if (!e.classList.contains("is-in")) io.observe(e); });
+    // Safety net: never leave content invisible (e.g. observers paused in a background tab).
+    setTimeout(() => els.forEach((e) => { const r = e.getBoundingClientRect(); if (r.top < vh) e.classList.add("is-in"); }), 2500);
   }
 
   /* ---------- copy chips ---------- */

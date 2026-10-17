@@ -580,6 +580,16 @@ body > main, body > header, body > footer { position: relative; z-index: 1; }
 .theme-switch button.is-active { background: var(--ink-brown); color: var(--dark-ink); }
 @media (max-width: 760px) { .theme-switch { bottom: 84px; } }
 
+/* small-screen fixes */
+.btn .lock, .pill .lock { width: 14px; height: 14px; flex: none; }
+@media (max-width: 760px) {
+  .floating-nav .nav-pill a, .floating-nav .nav-pill button { padding: 8px 10px; font-size: 13px; white-space: nowrap; }
+  .theme-switch { display: none; }
+}
+@media (max-width: 420px) {
+  .floating-nav .nav-pill a[href*="vibe-coded"] { display: none; }
+}
+
 /* utilities */
 .mt-1 { margin-top: 8px; } .mt-2 { margin-top: 16px; } .mt-3 { margin-top: 24px; } .mt-4 { margin-top: 40px; }
 .text-center { text-align: center; }

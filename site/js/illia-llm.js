@@ -120,7 +120,7 @@
     render();
     setTimeout(() => input.focus(), 250);
   }
-  function close() { state.open = false; aside.classList.remove("is-open"); aside.setAttribute("aria-hidden", "true"); }
+  function close() { state.open = false; if (aside.contains(document.activeElement)) document.activeElement.blur(); aside.classList.remove("is-open"); aside.setAttribute("aria-hidden", "true"); }
   function reset() { clearTimeout(typingTimer); state.messages = []; state.typing = false; state.pendingQuote = null; state.suggestions = [...SUGGESTED_QUESTIONS]; state.shown = new Set(SUGGESTED_QUESTIONS); render(); }
   function send(text) {
     const t = text.trim();
