@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-theme="superr" data-root="../" data-slug="agenteur">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenteur — engineering talent platform | Illia Strikhar</title>
+  <meta name="description" content="A 0→1 MVP for Agenteur: landing pages, web app, and emails for an AI-driven engineering talent platform.">
+  <meta property="og:title" content="Agenteur — engineering talent platform">
+  <meta property="og:image" content="https://illia.co/assets/work/agenteur/hero-laptop.png">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Geist:wght@400..700&family=Geist+Mono&family=Shantell+Sans:wght@700&family=Besley:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body data-page="case-study">
+  <header data-header></header>
+
+  <main>
+    <section class="cs-hero container">
+      <span class="eyebrow reveal">Case study · Agenteur · 2023</span>
+      <h1 class="reveal">Agenteur: hire top engineers, instantly</h1>
+
+      <div class="card overview reveal" style="--reveal-delay:120ms">
+        <div><h4>Overview</h4><p>A 0→1 MVP for a platform that matches companies with engineering talent using big data, psychological analysis, and neuroscience. Landing pages, the web app, and emails.</p></div>
+        <div><h4>My role</h4><p>Product designer. Research interviews, flows, UI, design system — working directly with the CEO and PM.</p></div>
+        <div><h4>Team</h4><div class="team-chips"><span>Me</span><span>CEO</span><span>PM</span><span>FE</span><span>BE</span></div></div>
+        <div><h4>Timeline</h4><p>8 weeks<br><span class="muted">via Toptal</span></p></div>
+      </div>
+
+      <div class="impact reveal" style="--reveal-delay:200ms">
+        <div class="stat"><div class="stat__num">0 → 1</div><div class="stat__label">From interviews to MVP</div><div class="stat__body">Research with small, medium, and large teams across the US and Europe informed every screen.</div></div>
+        <div class="stat"><div class="stat__num">3 surfaces</div><div class="stat__label">One language</div><div class="stat__body">Marketing site, product, and email designed as one system from day one.</div></div>
+        <div class="stat"><div class="stat__num">1 score</div><div class="stat__label">That people trusted</div><div class="stat__body">The match score explains itself — skills verified, where, and why — without a tooltip.</div></div>
+      </div>
+
+      <div class="media reveal" style="--reveal-delay:260ms"><img src="../assets/work/agenteur/hero-laptop.png" alt="Agenteur landing page on a laptop" fetchpriority="high"></div>
+    </section>
+
+    <div class="container--narrow cs-body">
+      <section class="cs-section" id="context" data-toc="Context">
+        <h2>The brief</h2>
+        <div class="prose">
+          <p>Agenteur wanted to replace the spreadsheet-and-recruiter grind with something closer to a dating app for engineering hires: a candidate pool scored by verified hard skills, soft skills, and fit, where a recruiting team could build relationships long before anyone is "ready to interview".</p>
+          <p>There was no product yet. The founder had a model, a pitch, and a lot of conviction. My job was to turn that into an intuitive, contextual web app — and the pages that sell it — in eight weeks.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" id="research" data-toc="Research">
+        <h2>Interviews first</h2>
+        <div class="prose">
+          <p>I ran interviews with hiring teams of very different sizes in the US and Europe. The pattern was consistent: everyone had too many candidates and too little signal, and every tool they used buried the signal under columns. Three things mattered most to them.</p>
+        </div>
+        <div class="note-grid">
+          <div class="note" style="--tilt:-1deg"><span class="note__tag">Insight 1</span>"Show me <em>why</em> this person matches, not just a number."</div>
+          <div class="note" style="--tilt:1.5deg"><span class="note__tag">Insight 2</span>Pipelines live per role. Switching roles should be instant, not a filter dance.</div>
+          <div class="note" style="--tilt:-0.5deg"><span class="note__tag">Insight 3</span>Soft skills decide the hire — but no tool showed them in a way anyone believed.</div>
+        </div>
+      </section>
+
+      <section class="cs-section" id="solution" data-toc="Solution">
+        <h2>The product</h2>
+        <h4>Sign up that already shows the app</h4>
+        <div class="prose">
+          <p>The create-account screen is split: a minimal form on the left, the real product (not an illustration) on the right, with the AI matching story in three slides. People understood what they were signing up for before they finished typing their email.</p>
+        </div>
+        <figure class="figure">
+          <div class="media media--auto"><img src="../assets/work/agenteur/pdf-signup-matching.png" alt="Agenteur sign-up screen with product preview, and the candidate list for a role with match scores" loading="lazy"></div>
+          <figcaption class="figcaption">Sign up with the product in view; the role pipeline with "Excellent match / Regular match" chips and a hover card explaining the overall score.</figcaption>
+        </figure>
+        <h4>A candidate list that explains itself</h4>
+        <div class="prose">
+          <p>Roles sit in the left rail ("Candidates found" / "Looking for candidates"). Each candidate row shows a plain-language match quality and tags; hovering the score opens a breakdown of hard and soft skills — which are verified and which are stated.</p>
+        </div>
+        <h4>The profile: one score, many reasons</h4>
+        <div class="prose">
+          <p>The candidate profile puts the Agenteur Score next to the fit score and an "OCEAN"-style soft-skill map, with tabs for experience, hard skills, soft skills, and activity. The main challenge was density: show skills and matches clearly without overwhelming the user. Progressive disclosure did most of the work.</p>
+        </div>
+        <figure class="figure">
+          <div class="media media--auto"><img src="../assets/work/agenteur/candidate-score.png" alt="Candidate profile with Agenteur Score 92.5% and a fit score gauge" loading="lazy"></div>
+          <figcaption class="figcaption">Candidate profile — Agenteur Score, fit score, profile highlights, verified skills.</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-section" id="results" data-toc="Results">
+        <h2>Outcome</h2>
+        <div class="prose">
+          <p>The MVP shipped with the landing pages, the web app, and the transactional and outreach emails, all on one small design system. The founder had a product to put in front of customers and investors instead of a deck. The score card became the thing people pointed at in demos — proof that the model's output could be shown without hiding it behind a "trust us".</p>
+        </div>
+        <p class="small muted font-ui">Screenshots are from a portfolio export; higher-resolution ones are on the way.</p>
+      </section>
+    </div>
+
+    <section class="container more-work" data-more-work></section>
+  </main>
+
+  <footer data-footer></footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/illia-llm.js"></script>
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" data-theme="superr" data-root="../" data-slug="matter">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protected case study | Illia Strikhar</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Geist:wght@400..700&family=Geist+Mono&family=Shantell+Sans:wght@700&family=Besley:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body data-page="case-study">
+  <header data-header></header>
+
+  <main>
+    <!-- Locked state (structure.md §5). Passcode is compared client-side as a SHA-256 hash; see README to change it. -->
+    <div class="container lock-wrap">
+      <div class="card lock" data-lock data-hash="57523f642f63eabb2a4f6804ad9efe4131c56c0784de25ef63ed7e6ee2ba10a3" data-title="Matter">
+        <div class="lock__icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" stroke="#2B1A07" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M36 56V40a24 24 0 0 1 48 0v16" stroke="#9fc1b8" stroke-width="7"/>
+            <rect x="22" y="54" width="76" height="54" rx="12" fill="#FDFBF9"/>
+            <g class="lock__eyes"><circle cx="46" cy="78" r="4" fill="#2B1A07"/><circle cx="74" cy="78" r="4" fill="#2B1A07"/></g>
+            <path d="M54 94q6-4 12 0"/>
+          </svg>
+        </div>
+        <h2>This one's locked.</h2>
+        <p>Matter is under NDA. It needs a passcode.</p>
+        <form>
+          <label class="sr-only" for="passcode">Passcode</label>
+          <input id="passcode" type="password" placeholder="Enter passcode" autocomplete="off" required>
+          <button class="btn btn--primary" type="submit"><span class="btn__in">Unlock</span></button>
+        </form>
+        <p class="lock__hint small muted font-ui">No passcode? <a href="mailto:hi@illia.co?subject=Passcode%20for%20Matter" class="accent">Reach out 👋</a></p>
+      </div>
+    </div>
+
+    <!-- Unlocked content -->
+    <div class="hidden" data-locked-content>
+      <section class="cs-hero container">
+        <span class="eyebrow reveal">Case study · Matter · 2025 – now · NDA</span>
+        <h1 class="reveal">Matter: emotional fitness, one memory at a time</h1>
+        <div class="card overview reveal">
+          <div><h4>Overview</h4><p>A neuroscience-backed iOS app for emotional fitness. Selected as Apple's App of the Day multiple times. Details are shared under NDA — this page is a placeholder until the write-up is approved.</p></div>
+          <div><h4>My role</h4><p>Product designer (Toptal engagement). Feature design, design system, App Store creative.</p></div>
+          <div><h4>Team</h4><div class="team-chips"><span>Me</span><span>CEO</span><span>PM</span><span>iOS</span><span>BE</span></div></div>
+          <div><h4>Timeline</h4><p>2025 → present</p></div>
+        </div>
+      </section>
+      <div class="container--narrow cs-body">
+        <section class="cs-section" id="context" data-toc="Context">
+          <h2>Coming soon</h2>
+          <div class="prose"><p>The full case study is being written with the client's approval. Ask me about it directly at <a href="mailto:hi@illia.co">hi@illia.co</a>.</p></div>
+        </section>
+      </div>
+      <section class="container more-work" data-more-work></section>
+    </div>
+  </main>
+
+  <footer data-footer></footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/illia-llm.js"></script>
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

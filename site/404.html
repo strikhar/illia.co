@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="superr" data-root="/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Not found — Illia Strikhar</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Geist:wght@400..700&family=Shantell+Sans:wght@700&family=Besley:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body data-page="404">
+  <header data-header></header>
+  <main>
+    <section class="container notfound" id="nf">
+      <div>
+        <button class="lock__icon" type="button" aria-label="Wake up the lock" onclick="document.getElementById('nf').classList.toggle('is-awake')">
+          <svg viewBox="0 0 120 120" fill="none" stroke="#2B1A07" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M36 56V40a24 24 0 0 1 48 0v16" stroke="#9fc1b8" stroke-width="7"/>
+            <rect x="22" y="54" width="76" height="54" rx="12" fill="#FDFBF9"/>
+            <g class="lock__eyes"><circle cx="46" cy="78" r="4" fill="#2B1A07"/><circle cx="74" cy="78" r="4" fill="#2B1A07"/></g>
+            <path d="M54 92q6 5 12 0"/>
+          </svg>
+        </button>
+        <p class="zzz" aria-hidden="true">z z z</p>
+        <h1 style="font-size: clamp(32px, 5vw, 56px)">This page is asleep.</h1>
+        <p class="lead mt-2">Or it never existed. Either way, the work is this way.</p>
+        <div class="row mt-3" style="justify-content:center">
+          <a class="btn btn--primary" href="/"><span class="btn__in">Back home</span></a>
+          <a class="btn btn--ghost" href="/#work"><span class="btn__in">See the work</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer data-footer></footer>
+  <script src="/js/data.js"></script>
+  <script src="/js/site.js"></script>
+  <script src="/js/illia-llm.js"></script>
+</body>
+</html>
