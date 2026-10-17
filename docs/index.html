@@ -44,24 +44,7 @@
             <span class="doodle doodle--label" style="left:-70px; top:-14px; transform:rotate(-8deg)">hi 👋🏻</span>
           </div>
         </div>
-
-        <div class="hero__teasers">
-          <div class="teaser reveal" style="--reveal-delay:260ms">
-            <h3>Recent work</h3>
-            <p>How I turn fuzzy product problems into shipped experiences — Giftly, Seated, Nifty, Agenteur.</p>
-            <a class="btn btn--dark btn--sm" href="#work"><span class="btn__in">Read case studies</span></a>
-          </div>
-          <div class="teaser reveal" style="--reveal-delay:340ms">
-            <h3>Vibe-coded</h3>
-            <p>Small products I design and build myself with an AI-facilitated workflow. This site is one of them.</p>
-            <a class="btn btn--dark btn--sm" href="vibe-coded.html"><span class="btn__in">See what I've shipped</span></a>
-          </div>
-          <div class="teaser reveal" style="--reveal-delay:420ms">
-            <h3>Illia LLM</h3>
-            <p>Ask the pre-written version of me about process, hiring, or which case study to read first.</p>
-            <button class="btn btn--dark btn--sm" type="button" data-llm-open><span class="btn__in">✦ Ask Illia LLM</span></button>
-          </div>
-        </div>
+        <span class="doodle hero__doodle-arrow" aria-hidden="true"><svg viewBox="0 0 90 60"><path d="M4 50C20 42 40 20 70 14M60 8l12 4-6 12"/></svg></span>
       </div>
     </section>
 
@@ -89,7 +72,7 @@
         <h2>Some recent work</h2>
         <p class="muted font-ui small">(full-time roles and Toptal engagements — more on request)</p>
       </div>
-      <div class="timeline" data-timeline></div>
+      <div class="work-stack" data-work></div>
     </section>
 
     <!-- Side projects (structure.md §3.4) -->
@@ -151,26 +134,26 @@
       const D = window.ILLIA;
       const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
       const arrow = '<svg class="arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-      const lockIcon = '<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>';
+      const lockIcon = '<svg class="lock-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>';
 
-      // timeline grouped by year, newest first
+      // work sheets, newest first — each project is its own ruled sheet with a year stamp and a tilted polaroid
       const entries = [...D.locked.map((p) => ({ ...p, locked: true })), ...D.projects].sort((a, b) => b.year - a.year);
-      const groups = [];
-      entries.forEach((e) => { let g = groups.find((x) => x.year === e.year); if (!g) { g = { year: e.year, items: [] }; groups.push(g); } g.items.push(e); });
-      document.querySelector("[data-timeline]").innerHTML = groups.map((g) => `
-        <div class="tl-group">
-          <div class="tl-year"><span class="tl-year__dot" aria-hidden="true"></span><span class="tl-year__label">${g.year}</span></div>
-          <div class="tl-entries">${g.items.map((p, i) => `
-            <article class="tl-entry reveal ${p.locked ? "tl-entry--locked" : ""}" style="--reveal-delay:${i * 80}ms">
-              <h3>${esc(p.name)}</h3>
-              <div class="tl-entry__meta">${(p.tags || []).map((t) => `<span class="pill pill--ghost">${esc(t)}</span>`).join("")}<span class="pill pill--ghost muted">${esc(p.years)}</span></div>
-              <p class="lead">${esc(p.summary)}</p>
-              <a class="media" href="${p.href}" aria-label="${esc(p.name)}"><img src="${p.cover}" alt="" loading="lazy"></a>
-              <div class="tl-entry__cta">${p.locked
-                ? `<a class="btn btn--ghost btn--sm" href="${p.href}"><span class="btn__in">${lockIcon} Passcode required</span></a>`
-                : `<a class="btn btn--primary btn--sm" href="${p.href}"><span class="btn__in">Read case study ${arrow}</span></a>`}</div>
-            </article>`).join("")}</div>
-        </div>`).join("");
+      const captions = { giftly: "the one I'm in right now", agenteur: "0→1 in eight weeks", seated: "light + dark, both", nifty: "six years, four platforms", matter: "ask me for the passcode" };
+      document.querySelector("[data-work]").innerHTML = entries.map((p) => `
+        <article class="sheet reveal ${p.locked ? "sheet--locked" : ""}">
+          <div class="sheet__body">
+            <span class="stamp">${esc(p.years)}</span>
+            <h3>${esc(p.name)}</h3>
+            <div class="sheet__tags">${(p.tags || []).map((t) => `<span class="pill pill--sticker">${esc(t)}</span>`).join("")}</div>
+            <p class="lead">${esc(p.summary)}</p>
+            ${p.locked
+              ? `<a class="btn btn--ghost btn--sm" href="${p.href}"><span class="btn__in">${lockIcon} Passcode required</span></a>`
+              : `<a class="btn btn--primary btn--sm" href="${p.href}"><span class="btn__in">Read case study ${arrow}</span></a>`}
+          </div>
+          <a class="sheet__media" href="${p.href}" aria-label="${esc(p.name)}">
+            <div class="polaroid"><div class="media"><img src="${p.cover}" alt="" loading="lazy"></div><p class="hand">${esc(captions[p.slug] || p.client)}</p></div>
+          </a>
+        </article>`).join("");
 
       document.querySelector("[data-side-projects]").innerHTML = D.sideProjects.map((s, i) => `
         <a class="card side-card reveal" href="${s.href}" ${/^https?:/.test(s.href) ? 'target="_blank" rel="noopener"' : ""} style="--reveal-delay:${i * 60}ms">

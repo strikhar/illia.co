@@ -30,7 +30,7 @@ Projects/, Voice & tone/   Source material — git-ignored, never published
 python3 -m http.server 4173 --directory docs
 ```
 
-Then open http://localhost:4173. Add `?theme=david` to any URL (or use the switch bottom-left) to compare themes; the choice is remembered in `localStorage`.
+Then open http://localhost:4173. The site uses the superr theme; `?theme=david` still renders the alternate token set for comparison (there is no visible switch).
 
 ## Deploy
 
@@ -54,4 +54,4 @@ and paste the hash into `data-hash`. This is polite gating for a static host, no
 
 ## Easter eggs (see design-superr.md §9)
 
-Custom drawn cursors · waving hand in the wordmark (3rd wave talks back) · hidden grid + notes revealed by the pointer on empty background · draggable timeline years with spring-back · copy-email chip · type `illia` anywhere for theme roulette · ghosted footer wordmark fills in on hover · select any text → Ask Illia LLM · sleeping lock on 404.
+Custom drawn cursors · waving hand in the wordmark (3rd wave talks back) · hidden grid + notes revealed by the pointer on empty background · draggable year stamps with spring-back · notebook edge-tabs that slide out on hover · copy-email chip · type `illia` anywhere for theme roulette · ghosted footer wordmark fills in on hover · select any text → Ask Illia LLM · sleeping lock on 404.

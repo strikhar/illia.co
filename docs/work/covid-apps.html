@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-theme="superr" data-root="../" data-slug="covid-apps">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SlowCOVIDNC &amp; COVIDWISE — exposure notification apps | Illia Strikhar</title>
+  <meta name="description" content="Two official US COVID-19 exposure notification apps for North Carolina and Virginia, designed with SpringML in 2020: onboarding, exposure alerts, sharing a positive result, and the illustrations that explain the system.">
+  <meta property="og:title" content="SlowCOVIDNC &amp; COVIDWISE — exposure notification apps">
+  <meta property="og:image" content="https://illia.co/assets/work/covid-apps/slowcovidnc-hero-hand.png">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Geist:wght@400..700&family=Geist+Mono&family=Shantell+Sans:wght@700&family=Besley:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body data-page="case-study">
+  <header data-header></header>
+
+  <main>
+    <section class="cs-hero container">
+      <span class="eyebrow reveal">Case study · SpringML · 2020</span>
+      <h1 class="reveal">Two states, one job: tell people they were exposed</h1>
+
+      <div class="card overview reveal" style="--reveal-delay:120ms">
+        <div><h4>Overview</h4><p>SlowCOVIDNC was the first official COVID-19 exposure notification app in the US, for the North Carolina Department of Health and Human Services. COVIDWISE followed for the Virginia Department of Health. Both run on the Apple/Google exposure notification framework.</p></div>
+        <div><h4>My role</h4><p>Product designer with SpringML. App design and user flows for both apps, plus the custom illustrations that explain how the system works.</p></div>
+        <div><h4>Team</h4><div class="team-chips"><span>Me</span><span>SpringML PM</span><span>iOS</span><span>Android</span><span>NCDHHS</span><span>VDH</span></div></div>
+        <div><h4>Timeline</h4><p>2020<br><span class="muted">via Toptal</span></p></div>
+      </div>
+
+      <div class="impact reveal" style="--reveal-delay:200ms">
+        <div class="stat"><div class="stat__num">1st</div><div class="stat__label">Official US exposure app</div><div class="stat__body">SlowCOVIDNC launched before any other state's official app.</div></div>
+        <div class="stat"><div class="stat__num">300k+</div><div class="stat__label">Downloads in week one</div><div class="stat__body">COVIDWISE in Virginia — adoption that depended on people trusting a screen in the first thirty seconds.</div></div>
+        <div class="stat"><div class="stat__num">2.5M+</div><div class="stat__label">Users in Virginia</div><div class="stat__body">The most people any product I've designed has reached, for the least glamorous reason.</div></div>
+      </div>
+
+      <div class="media reveal" style="--reveal-delay:260ms"><img src="../assets/work/covid-apps/slowcovidnc-hero-hand.png" alt="A hand holding a phone with the SlowCOVIDNC welcome screen" fetchpriority="high"></div>
+    </section>
+
+    <div class="container--narrow cs-body">
+      <section class="cs-section" id="context" data-toc="Context">
+        <h2>The brief</h2>
+        <div class="prose">
+          <p>In 2020 Apple and Google shipped a framework that let phones exchange anonymous Bluetooth tokens and warn people who had been near someone who later tested positive. States had to build the apps on top of it — fast, under public scrutiny, for everyone from teenagers to retirees.</p>
+          <p>SpringML built the apps; I designed them. The constraint that shaped everything: the technology is privacy-preserving by design, but nobody will enable it unless they <em>understand</em> that. The design problem was trust, not features.</p>
+        </div>
+      </section>
+
+      <section class="cs-section" id="slowcovidnc" data-toc="SlowCOVIDNC">
+        <h2>SlowCOVIDNC — North Carolina</h2>
+        <h4>Explaining the invisible</h4>
+        <div class="prose">
+          <p>The app does almost nothing visible. So onboarding does the explaining: a short "How it works" story with two characters, Mia and Jacob, and custom illustrations for each step — phones exchanging tokens, a notification arriving, sharing a positive result with a PIN from the health department. Plain language, the state's teal, no virus graphics.</p>
+        </div>
+        <figure class="figure">
+          <div class="media media--auto"><img src="../assets/work/covid-apps/slowcovidnc-onboarding.png" alt="SlowCOVIDNC welcome screen, 'Receiving a notification' explainer with an illustration, and the confirmation after enabling exposure notifications" loading="lazy"></div>
+          <figcaption class="figcaption">Welcome, "How it works", and the thank-you after enabling notifications — each with its illustration.</figcaption>
+        </figure>
+        <h4>The day it matters</h4>
+        <div class="prose">
+          <p>The Exposures screen is calm by default and specific when it needs to be: "You have likely been exposed… last exposed 2 days ago", followed by the three things to do next — the health department's virtual visit, its guidance page, and the hotline. Sharing a positive result walks through why the phone asks for a PIN and what is and isn't shared.</p>
+        </div>
+        <div class="figure-grid">
+          <figure class="figure"><div class="media media--auto"><img src="../assets/work/covid-apps/slowcovidnc-exposure-how-it-works.png" alt="Exposures Detected screen, 'Distance & duration' explainer, and 'Sharing a positive result' explainer" loading="lazy"></div><figcaption class="figcaption">An exposure detected, and the two explainers about distance, duration, and sharing a result.</figcaption></figure>
+          <figure class="figure"><div class="media media--auto"><img src="../assets/work/covid-apps/slowcovidnc-collage.png" alt="Collage of SlowCOVIDNC screens" loading="lazy"></div><figcaption class="figcaption">The set — onboarding, exposures, and the positive-result flow.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-section" id="covidwise" data-toc="COVIDWISE">
+        <h2>COVIDWISE — Virginia</h2>
+        <div class="prose">
+          <p>Virginia's app shares the bones of SlowCOVIDNC — the same framework, the same three jobs — in the Virginia Department of Health's purple, with a dark mode. The structure is a tab bar: Exposures, Notify Others, Virtual Agent. "Tested positive for COVID-19?" leads with a short "Before you get started" that says exactly what the phone will share (random IDs from the past 14 days) and what it won't (your identity).</p>
+        </div>
+        <figure class="figure">
+          <div class="media media--auto"><img src="../assets/work/covid-apps/covidwise-exposures.png" alt="COVIDWISE Exposures screen with notifications off, the Share a Positive Diagnosis screen, and Exposures with notifications on" loading="lazy"></div>
+          <figcaption class="figcaption">Exposures off, "Share a positive diagnosis", exposures on — the whole app in three screens.</figcaption>
+        </figure>
+        <div class="figure-grid">
+          <figure class="figure"><div class="media media--auto"><img src="../assets/work/covid-apps/covidwise-tested-positive.png" alt="COVIDWISE 'Tested positive' flow in dark and light" loading="lazy"></div><figcaption class="figcaption">"Tested positive for COVID-19?" in dark and light — the same copy, the same reassurance.</figcaption></figure>
+          <figure class="figure"><div class="media media--auto"><img src="../assets/work/covid-apps/covidwise-hero-dark.png" alt="A hand holding a phone with the COVIDWISE positive-result screen in dark mode" loading="lazy"></div><figcaption class="figcaption">Dark mode, in the hand.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-section" id="results" data-toc="Results">
+        <h2>Outcome</h2>
+        <div class="prose">
+          <p>SlowCOVIDNC shipped first in the country. COVIDWISE was downloaded 300,000+ times in its first week and reached more than 2.5 million people in Virginia. I can't tell you how many exposures were caught — the system is anonymous by design, which was the point. What I can say is that two state health departments put their name on screens I designed, and people turned the feature on.</p>
+        </div>
+        <p class="small muted font-ui">Screenshots are from a portfolio export; higher-resolution ones are on the way.</p>
+      </section>
+    </div>
+
+    <section class="container more-work" data-more-work></section>
+  </main>
+
+  <footer data-footer></footer>
+  <script src="../js/data.js"></script>
+  <script src="../js/site.js"></script>
+  <script src="../js/illia-llm.js"></script>
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

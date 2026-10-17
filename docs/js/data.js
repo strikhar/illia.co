@@ -38,6 +38,21 @@ window.ILLIA = (function () {
       href: R("work/giftly.html"),
     },
     {
+      slug: "soax",
+      name: "SOAX",
+      client: "SOAX",
+      year: 2023,
+      years: "2023 – 2024",
+      role: "Lead UX/UI Designer",
+      timeframe: "Jul 2023 – Jan 2024",
+      type: "Responsive web",
+      tags: ["Developer tools", "Marketing site", "Design system"],
+      summary:
+        "Revamped the web presence of a proxy and data-collection platform: 30+ responsive pages on one design system — typography, colour, layout, iconography. The designs are still in use.",
+      cover: R("assets/work/soax/hero-laptop.png"),
+      href: R("work/soax.html"),
+    },
+    {
       slug: "agenteur",
       name: "Agenteur",
       client: "Agenteur",
@@ -53,6 +68,36 @@ window.ILLIA = (function () {
       href: R("work/agenteur.html"),
     },
     {
+      slug: "atriumhq",
+      name: "Atrium",
+      client: "AtriumHQ",
+      year: 2022,
+      years: "2022 – 2024",
+      role: "Product Designer",
+      timeframe: "Feb 2022 – Aug 2024",
+      type: "Web app + marketing site",
+      tags: ["B2B SaaS", "AI", "Design system"],
+      summary:
+        "An AI-powered sales management platform used by 150+ sales teams. Designed Sales Coach, Goals, Meetings, Org Chart, and Playbooks from scratch, redesigned atriumhq.com, and built the design system shared by product, marketing, and engineering.",
+      cover: R("assets/work/atriumhq/hero-devices.png"),
+      href: R("work/atriumhq.html"),
+    },
+    {
+      slug: "hirement",
+      name: "Hirement",
+      client: "Hirement",
+      year: 2021,
+      years: "Toptal",
+      role: "Sole Designer (0→1)",
+      timeframe: "2.5 months",
+      type: "Web app",
+      tags: ["HR tech", "0→1", "Branding"],
+      summary:
+        "A web platform for structured, customisable interview loops. Logo, a lightweight design system, and the full product UI in two and a half months, working directly with the founder.",
+      cover: R("assets/work/hirement/loops.png"),
+      href: R("work/hirement.html"),
+    },
+    {
       slug: "seated",
       name: "Seated",
       client: "Seated",
@@ -66,6 +111,21 @@ window.ILLIA = (function () {
         "Took the brand identity UENO created for Seated and brought it across presale pages, ticket booking flows (light + dark), the artist dashboard, and emails. Used by thousands of artists and tens of millions of fans.",
       cover: R("assets/work/seated/interstitial-dark.png"),
       href: R("work/seated.html"),
+    },
+    {
+      slug: "covid-apps",
+      name: "SlowCOVIDNC & COVIDWISE",
+      client: "SpringML",
+      year: 2020,
+      years: "2020",
+      role: "Product Designer",
+      timeframe: "2020",
+      type: "iOS + Android",
+      tags: ["Healthtech", "Public sector", "Mobile"],
+      summary:
+        "Two official US COVID-19 exposure notification apps — SlowCOVIDNC, the first in the country, for North Carolina, and COVIDWISE for Virginia (300k+ downloads in week one, 2.5M+ users). App design, flows, and the illustrations that explain how exposure notifications work.",
+      cover: R("assets/work/covid-apps/slowcovidnc-hero-hand.png"),
+      href: R("work/covid-apps.html"),
     },
     {
       slug: "nifty",
@@ -102,9 +162,6 @@ window.ILLIA = (function () {
   const sideProjects = [
     { emoji: "🪐", name: "Overspace", blurb: "A small product design studio I co-run with friends — the unglamorous parts of design that make the flashy parts possible.", href: "https://overspace.co/", tag: "Studio" },
     { emoji: "📖", name: "Аркуші", blurb: "A non-profit iOS app with Ukrainian poetry — one poem at a time, no ads, no accounts.", href: "https://apps.apple.com/us/app/id1500310604", tag: "iOS app" },
-    { emoji: "🧭", name: "crazzzytravel", blurb: "A travel blog that helped thousands of people travel better (and taught me email marketing and copywriting).", href: "http://crazzzytravel.com/", tag: "Blog" },
-    { emoji: "📺", name: "Charity media portal", blurb: "A Ukrainian charity media portal — now defunct, but it taught me how much a clear story matters.", href: "https://www.youtube.com/watch?v=GVTFI5Wh--I", tag: "Media" },
-    { emoji: "💬", name: "Artyom", blurb: "An anonymous iOS chat where you could talk to a real human when things got heavy. In Russian, now defunct.", href: "https://spark.ru/startup/artyom/blog/23491/o-proekte-artyom", tag: "iOS app" },
     { emoji: "✦", name: "This website", blurb: "Designed in the open and built with Claude alongside me — the same AI-facilitated workflow I use for client work.", href: R("vibe-coded.html"), tag: "Vibe-coded" },
   ];
 
@@ -190,6 +247,30 @@ window.ILLIA = (function () {
       answer:
         "Nifty was my longest run — founding designer from 2016 to 2022. MVP to full launch across Web, iOS, Android, and Mac: roadmaps, tasks in five views, discussions, docs, forms, time tracking, portfolios — and the design system under all of it. Hundreds of teams adopted it.",
       cards: card("nifty"),
+    },
+    {
+      keywords: ["atrium", "atriumhq", "sales coach", "sales management", "sales teams", "sales platform"],
+      answer:
+        "Atrium is an AI-powered sales management platform — $13M raised, used by 150+ sales teams at companies like Figma, SalesLoft, and LaunchDarkly. I was the product designer from early 2022 to mid-2024: Sales Coach, Goal History & Recommendations, Meetings, Org Chart, Playbooks & Saved Metrics, all designed from scratch, plus the atriumhq.com redesign and a design system shared by product, marketing, and engineering.",
+      cards: card("atriumhq"),
+    },
+    {
+      keywords: ["soax", "proxy", "proxies", "web scraping", "scraping", "data collection"],
+      answer:
+        "SOAX is a proxy and data-collection platform. From July 2023 to January 2024 I was the lead UX/UI designer for its web presence — 30+ responsive pages and the design system behind them (type, colour, layout, icons). The designs are still live, which for a marketing site is the result that matters.",
+      cards: card("soax"),
+    },
+    {
+      keywords: ["hirement", "interview loop", "interview loops", "structured interview", "hiring flow", "hiring flows"],
+      answer:
+        "Hirement is a web platform for structured, customisable interview loops — rounds, interviewers, question types, 1–5 star scores. I was the sole designer for two and a half months, working directly with the founder: logo, a lightweight design system, and the full UI.",
+      cards: card("hirement"),
+    },
+    {
+      keywords: ["covid", "covid-19", "coronavirus", "slowcovidnc", "covidwise", "exposure notification", "exposure notifications", "pandemic", "north carolina", "virginia", "springml", "public sector", "government"],
+      answer:
+        "In 2020, with SpringML, I designed two official US COVID-19 exposure notification apps: SlowCOVIDNC for North Carolina — the first official one in the country — and COVIDWISE for Virginia, which hit 300k+ downloads in its first week and 2.5M+ users. The design problem was trust, not features: explaining an invisible, privacy-preserving system well enough that people turned it on.",
+      cards: card("covid-apps"),
     },
     {
       keywords: ["matter", "nda", "app of the day", "wellness", "emotional"],
