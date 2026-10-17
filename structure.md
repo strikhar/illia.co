@@ -155,13 +155,13 @@ Footer
 
 **Change:**
 - Nav: `Home · Work · About · ✦ Illia LLM` (Illia LLM opens the sidebar, not a page). "Play" → later "Vibe-coded" (placeholder page in v1).
-- Timeline groups by **year** too, but entries come from `site/data/projects.js` (Giftly 2024–now, Agenteur, Nifty 2016–22, Seated 2020). Locked entries: Matter (NDA), Giant Pumpkin (NDA) — shown as "Password required" placeholders later.
+- Timeline groups by **year** too, but entries come from `docs/data/projects.js` (Giftly 2024–now, Agenteur, Nifty 2016–22, Seated 2020). Locked entries: Matter (NDA), Giant Pumpkin (NDA) — shown as "Password required" placeholders later.
 - "Some other things I do" → **Side projects** (Overspace, Arkushi iOS, crazzzytravel, …) from the Notion page; "I write" / "Talks" omitted in v1.
 - Testimonials → the three from Notion (HousingAnywhere, Showcase, Impulse).
 - Contact letter → Illia's own copy, signed "Illia"; chips: Email · LinkedIn · Instagram · Resume.
 
 **Add:**
-- **Illia LLM**: header entry + floating bubble + **select-text → "Ask Illia LLM" pill**; canned answers with case-study cards (ported from niia.design, see `site/js/illia-llm.js`).
+- **Illia LLM**: header entry + floating bubble + **select-text → "Ask Illia LLM" pill**; canned answers with case-study cards (ported from niia.design, see `docs/js/illia-llm.js`).
 - Easter eggs (see `design-superr.md` §9).
 - Theme switch (`data-theme="superr" | "david"`) for comparing the two visual directions.
 

@@ -2,7 +2,7 @@
 
 Reverse-engineered from https://www.withdavid.ai on 2026-10-17 (Webflow site; computed styles + its CSS custom properties, which Webflow exposes verbatim). Values marked **(ours)** are our adaptations.
 
-Theme switch: `<html data-theme="david">`. Tokens live in `site/css/tokens.css`.
+Theme switch: `<html data-theme="david">`. Tokens live in `docs/css/tokens.css`.
 
 ---
 

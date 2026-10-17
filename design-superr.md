@@ -2,7 +2,7 @@
 
 Reverse-engineered from https://www.superr.ai on 2026-10-17 (computed styles, CSS rules, keyframes, cursor rules, assets list), then adapted for a portfolio. Where a value is *ours* rather than *measured*, it is marked **(ours)**.
 
-Theme switch: `<html data-theme="superr">` (default). Tokens live in `site/css/tokens.css`.
+Theme switch: `<html data-theme="superr">` (default). Tokens live in `docs/css/tokens.css`.
 
 ---
 
@@ -144,7 +144,7 @@ p, span, h1–h6, blockquote, li, td, th, .cursor-text { cursor: url(text-cursor
 ```
 Hotspots: arrow `4 2`, hand `12 4`, text `11 16`, drag `14 12`, grab `12 8`. Cursor images are ~32px, brown outline `#2B1A07`, cream fill, 1px drop shadow.
 
-**(ours)** We draw our own set in `site/assets/cursors/` (arrow, hand, text, grab) — same hotspots, same CSS cascade, plus `@media (pointer: coarse)` → no custom cursor, and `prefers-reduced-motion` has no effect on cursors.
+**(ours)** We draw our own set in `docs/assets/cursors/` (arrow, hand, text, grab) — same hotspots, same CSS cascade, plus `@media (pointer: coarse)` → no custom cursor, and `prefers-reduced-motion` has no effect on cursors.
 
 ---
 
@@ -199,4 +199,4 @@ Rule: every egg is **discoverable by normal use, never blocks it, and costs noth
 
 ## 10. Where each token lives
 
-`site/css/tokens.css` → `:root[data-theme="superr"] { … }` and `:root[data-theme="david"] { … }`. Components only ever reference tokens. Cursor files in `site/assets/cursors/`. Fonts loaded from Google Fonts (Fraunces, Shantell Sans) + jsDelivr (Geist) with `font-display: swap`.
+`docs/css/tokens.css` → `:root[data-theme="superr"] { … }` and `:root[data-theme="david"] { … }`. Components only ever reference tokens. Cursor files in `docs/assets/cursors/`. Fonts loaded from Google Fonts (Fraunces, Shantell Sans) + jsDelivr (Geist) with `font-display: swap`.
