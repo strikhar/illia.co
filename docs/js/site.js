@@ -59,6 +59,7 @@
   /* ---------- notebook edge-tabs (site nav once the top bar is gone; case-study.js replaces them with section tabs) ---------- */
   function renderEdgeTabs() {
     if (document.querySelector("[data-edge-tabs]")) return; // a page may render its own
+    if (body.dataset.page === "case-study") return; // case studies get an "On this page" card instead (case-study.js)
     const tabs = h("nav", { class: "edge-tabs", "data-edge-tabs": "", "aria-label": "Site" });
     D.nav.forEach((n) => tabs.append(h("a", { class: "edge-tab" + (isActive(n) ? " is-active" : ""), href: n.href }, h("span", {}, n.label), h("i", { "aria-hidden": "true" }))));
     tabs.append(h("button", { class: "edge-tab edge-tab--llm", type: "button", "data-llm-open": "" }, h("span", { html: ICON.spark + " Illia LLM" }), h("i", { "aria-hidden": "true" })));
@@ -82,7 +83,7 @@
       h("div", { class: "container" },
         h("div", {},
           h("h3", {}, "Design for humans, not users."),
-          h("p", { class: "mt-2", style: "opacity:.9; max-width: 36ch" }, "Senior product designer in Berlin. 0→1 MVPs, design systems, and the details people remember.")
+          h("p", { class: "mt-2", style: "opacity:.9; max-width: 36ch" }, "Senior product designer in New York City. 0→1 MVPs, design systems, and the details people remember.")
         ),
         h("div", {},
           h("h4", {}, "Navigation"),
@@ -173,23 +174,39 @@
   function spotlight() {
     if (matchMedia("(pointer: coarse)").matches || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const layer = h("div", { class: "spotlight-layer", "aria-hidden": "true" });
-    const secrets = [
-      { text: "you found the grid ✦", x: 0.12, y: 0.78 },
-      { text: "pixels are people too", x: 0.72, y: 0.22 },
-      { text: "hi@illia.co, if you're reading this", x: 0.55, y: 0.9 },
+    // One hidden note at a time, placed near the pointer when the grid lights up; a new random one each time.
+    const PHRASES = [
+      "pixels are people too", "you found the grid ✦", "hi@illia.co, if you're reading this", "nobody asked for this detail. I did it anyway",
+      "design is an attitude", "ship it, then make it kind", "this margin is 24px on purpose", "the best interface is a good conversation",
+      "research first. always.", "a founder, a hypothesis, forty interviews", "made with Claude, directed by a human", "0→1 is my favourite number",
+      "hover harder", "there is no dark mode. there is a flashlight", "every product needs a memory", "wireframes are just honest UI",
+      "I audit the CSS so you don't have to", "NYC, via Ukraine", "the lock on the Matter page has feelings", "try typing my name",
+      "select any sentence and ask me about it", "humans, not users", "a good empty state teaches", "nice cursor, right?",
     ];
-    const nodes = secrets.map((s) => { const n = h("span", { class: "secret" }, s.text); n.style.left = s.x * 100 + "%"; n.style.top = s.y * 100 + "%"; layer.append(n); return n; });
+    const note = h("span", { class: "secret" });
+    layer.append(note);
     body.prepend(layer);
-    let idle, moved = 0;
+    let idle, moved = 0, armed = true;
+    function placeNote(x, y) {
+      note.textContent = PHRASES[Math.floor(Math.random() * PHRASES.length)];
+      const ang = Math.random() * Math.PI * 2, dist = 90 + Math.random() * 90;
+      const nx = Math.min(Math.max(16, x + Math.cos(ang) * dist), window.innerWidth - 260);
+      const ny = Math.min(Math.max(16, y + Math.sin(ang) * dist), window.innerHeight - 40);
+      note.style.left = nx + "px"; note.style.top = ny + "px";
+      note.style.transform = `rotate(${(Math.random() * 10 - 5).toFixed(1)}deg)`;
+    }
     window.addEventListener("pointermove", (e) => {
       layer.style.setProperty("--mx", e.clientX + "px");
       layer.style.setProperty("--my", e.clientY + "px");
-      const over = e.target.closest(".card, .btn, .media, .polaroid, .letter, .hero__card, .llm-sidebar, .nav-links, .edge-tabs, .llm-bubble, img, a, button, input, .sheet, .stat, .note, .figure, .overview");
+      const over = e.target.closest(".card, .btn, .media, .polaroid, .letter, .hero__card, .llm-sidebar, .nav-links, .edge-tabs, .toc, .llm-bubble, img, a, button, input, .sheet, .stat, .note, .figure, .overview");
       moved++;
-      layer.classList.toggle("is-on", !over && moved > 12);
-      nodes.forEach((n) => { const r = n.getBoundingClientRect(); const d = Math.hypot(r.left + r.width / 2 - e.clientX, r.top + r.height / 2 - e.clientY); n.classList.toggle("is-lit", d < 170); });
+      const on = !over && moved > 12;
+      if (on && armed) { placeNote(e.clientX, e.clientY); armed = false; }
+      layer.classList.toggle("is-on", on);
+      const r = note.getBoundingClientRect();
+      note.classList.toggle("is-lit", on && Math.hypot(r.left + r.width / 2 - e.clientX, r.top + r.height / 2 - e.clientY) < 190);
       clearTimeout(idle);
-      idle = setTimeout(() => layer.classList.remove("is-on"), 1600);
+      idle = setTimeout(() => { layer.classList.remove("is-on"); armed = true; }, 1600);
     }, { passive: true });
   }
 

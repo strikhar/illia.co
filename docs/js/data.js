@@ -24,6 +24,7 @@ window.ILLIA = (function () {
   const projects = [
     {
       slug: "giftly",
+      url: "https://www.giftly.com",
       name: "Giftly",
       client: "Giftly",
       year: 2024,
@@ -39,6 +40,7 @@ window.ILLIA = (function () {
     },
     {
       slug: "soax",
+      url: "https://soax.com",
       name: "SOAX",
       client: "SOAX",
       year: 2023,
@@ -69,6 +71,7 @@ window.ILLIA = (function () {
     },
     {
       slug: "atriumhq",
+      url: "https://www.atriumhq.com",
       name: "Atrium",
       client: "AtriumHQ",
       year: 2022,
@@ -99,6 +102,7 @@ window.ILLIA = (function () {
     },
     {
       slug: "seated",
+      url: "https://www.seated.com",
       name: "Seated",
       client: "Seated",
       year: 2020,
@@ -114,6 +118,7 @@ window.ILLIA = (function () {
     },
     {
       slug: "covid-apps",
+      url: "https://share.google/BJrUxOp5MNKvaPLAu",
       name: "SlowCOVIDNC & COVIDWISE",
       client: "SpringML",
       year: 2020,
@@ -129,6 +134,7 @@ window.ILLIA = (function () {
     },
     {
       slug: "nifty",
+      url: "https://niftypm.com",
       name: "Nifty",
       client: "NiftyPM",
       year: 2016,
@@ -148,6 +154,7 @@ window.ILLIA = (function () {
   const locked = [
     {
       slug: "matter",
+      url: "https://matter.xyz",
       name: "Matter",
       year: 2025,
       years: "2025 – now",
@@ -318,12 +325,12 @@ window.ILLIA = (function () {
     {
       keywords: ["experience", "background", "career", "years", "history", "senior"],
       answer:
-        "10+ years. Founding designer at Nifty (2016–2022), head of product design at Variant3D (2023–2025), senior product designer at Giftly (2024–now), and a long list of Toptal engagements — Atrium, Seated, SOAX, HousingAnywhere, Ring4, two official US COVID exposure apps. Based in Berlin, originally from Ukraine, formerly NYC.",
+        "10+ years. Founding designer at Nifty (2016–2022), head of product design at Variant3D (2023–2025), senior product designer at Giftly (2024–now), and a long list of Toptal engagements — Atrium, Seated, SOAX, HousingAnywhere, Ring4, two official US COVID exposure apps. Based in New York City, originally from Ukraine.",
     },
     {
       keywords: ["berlin", "where are you", "location", "timezone", "remote", "nyc", "new york", "ukraine"],
       answer:
-        "Berlin, working remotely with teams in New York and across Europe. I'm originally from Ukraine and spent years in NYC — which is why my case studies say 'from NYC' and my calendar says CET.",
+        "New York City. I work with teams here and across Europe, and I'm originally from Ukraine — which is why the calendar says EST and the poetry app says Аркуші.",
     },
     {
       keywords: ["resume", "résumé", "cv", "pdf"],

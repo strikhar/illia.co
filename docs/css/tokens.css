@@ -37,8 +37,8 @@
   --display-opsz: "opsz" 144, "SOFT" 100, "WONK" 1;
   --text-opsz: "opsz" 14, "SOFT" 30;
 
-  --fs-hero: clamp(44px, 8.6vw, 96px);
-  --lh-hero: 1.02;
+  --fs-hero: clamp(38px, 5.8vw, 68px);
+  --lh-hero: 1.06;
   --fs-h2: clamp(30px, 4.2vw, 44px);
   --lh-h2: 1.12;
   --fs-h3: clamp(22px, 2.6vw, 28px);

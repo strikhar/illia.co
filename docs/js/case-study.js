@@ -4,26 +4,18 @@
 (function () {
   const D = window.ILLIA;
 
-  /* ---------- On this page: notebook edge-tabs with section anchors ---------- */
+  /* ---------- "On this page" card (structure.md §4) — appears once the hero scrolls away ---------- */
   const sections = [...document.querySelectorAll(".cs-section[id]")];
-  const tabs = document.querySelector("[data-edge-tabs]");
-  if (sections.length && tabs) {
-    tabs.setAttribute("aria-label", "On this page");
-    tabs.innerHTML = "";
-    const links = sections.map((s) => {
-      const a = document.createElement("a");
-      a.className = "edge-tab";
-      a.href = "#" + s.id;
-      a.innerHTML = `<span>${s.dataset.toc || s.querySelector("h2")?.textContent || s.id}</span><i aria-hidden="true"></i>`;
-      tabs.append(a);
-      return a;
-    });
-    const home = document.createElement("a");
-    home.className = "edge-tab";
-    home.href = D.R("index.html#work");
-    home.innerHTML = "<span>← All work</span><i aria-hidden='true'></i>";
-    tabs.append(home);
+  if (sections.length) {
+    const toc = document.createElement("nav");
+    toc.className = "toc";
+    toc.setAttribute("aria-label", "On this page");
+    toc.innerHTML = `<h4>On this page</h4>` + sections.map((s) => `<a href="#${s.id}">${s.dataset.toc || s.querySelector("h2")?.textContent || s.id}</a>`).join("") + `<a class="toc__back" href="${D.R("index.html#work")}">← All work</a>`;
+    document.body.append(toc);
+    const links = [...toc.querySelectorAll("a:not(.toc__back)")];
+    const hero = document.querySelector(".cs-hero");
     const spy = () => {
+      toc.classList.toggle("is-visible", hero ? window.scrollY > hero.offsetTop + hero.offsetHeight - 160 : true);
       const y = window.scrollY + window.innerHeight * 0.35;
       let current = null;
       sections.forEach((s) => { if (s.offsetTop <= y) current = s; });
@@ -31,6 +23,15 @@
     };
     window.addEventListener("scroll", spy, { passive: true });
     spy();
+  }
+
+  /* ---------- Live link in the overview card ---------- */
+  const me = [...D.projects, ...D.locked].find((p) => p.slug === document.documentElement.dataset.slug);
+  const overview = document.querySelector(".cs-hero .overview");
+  if (me && me.url && overview) {
+    const cell = document.createElement("div");
+    cell.innerHTML = `<h4>Live</h4><a class="overview__live" href="${me.url}" target="_blank" rel="noopener">${me.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")} ↗</a>`;
+    overview.append(cell);
   }
 
   /* ---------- More case studies ---------- */
