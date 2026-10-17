@@ -69,6 +69,7 @@
     body.append(floating);
     const io = new IntersectionObserver(([e]) => floating.classList.toggle("is-visible", !e.isIntersecting), { rootMargin: "-40px 0px 0px 0px" });
     io.observe(mount);
+    window.addEventListener("scroll", () => floating.classList.toggle("is-visible", window.scrollY > mount.offsetTop + mount.offsetHeight - 40), { passive: true });
   }
 
   /* ---------- footer ---------- */
@@ -155,8 +156,12 @@
       entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
     els.forEach((e) => { if (!e.classList.contains("is-in")) io.observe(e); });
-    // Safety net: never leave content invisible (e.g. observers paused in a background tab).
-    setTimeout(() => els.forEach((e) => { const r = e.getBoundingClientRect(); if (r.top < vh) e.classList.add("is-in"); }), 2500);
+    // Safety nets: never leave content invisible (observers can pause in background tabs) — a scroll-driven
+    // check and a one-off timer both mark anything above the fold as revealed.
+    const check = () => { const h = window.innerHeight; els.forEach((e) => { if (e.classList.contains("is-in")) return; const r = e.getBoundingClientRect(); if (r.top < h * 0.96 && r.bottom > 0) e.classList.add("is-in"); }); };
+    let ticking = false;
+    window.addEventListener("scroll", () => { if (ticking) return; ticking = true; requestAnimationFrame(() => { check(); ticking = false; }); }, { passive: true });
+    setTimeout(check, 2500);
   }
 
   /* ---------- copy chips ---------- */
