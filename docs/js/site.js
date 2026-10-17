@@ -146,6 +146,9 @@
     const check = () => { const hh = window.innerHeight; els.forEach((e) => { if (e.classList.contains("is-in")) return; const r = e.getBoundingClientRect(); if (r.top < hh * 0.96 && r.bottom > 0) e.classList.add("is-in"); }); };
     let ticking = false;
     window.addEventListener("scroll", () => { if (ticking) return; ticking = true; requestAnimationFrame(() => { check(); ticking = false; }); }, { passive: true });
+    window.addEventListener("load", check);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(check);
+    setTimeout(check, 1000);
     setTimeout(check, 2500);
   }
 
